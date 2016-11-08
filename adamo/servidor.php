@@ -15,12 +15,9 @@ fwrite($f, $HTTP_RAW_POST_DATA);
 fclose($f);
 
 
-
-$conect = new PDO('mysql:host=localhost;dbname=blogretro', 'root', '@avelino82');
-
 function busca_usuario($email, $senha){
 
-	$conect = new PDO('mysql:host=localhost;dbname=blogretro', 'root', '@avelino82');
+	$conect = new PDO('mysql:host=localhost;dbname=blogretro', '', '');
 	$conect->exec("SET CHARACTER SET utf8");
 
 	$query = $conect->query("select * from usuarios where email='{$email}' and senha='{$senha}'");
